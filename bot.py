@@ -17,7 +17,7 @@ def ask_ai(message):
     }
 
     data = {
-        "model": "mistralai/mistral-7b-instruct:free",
+        "model": "openrouter/hunter-alpha",
         "messages": [
             {
                 "role": "system",
