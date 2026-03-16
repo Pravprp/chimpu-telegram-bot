@@ -17,7 +17,7 @@ def ask_ai(message):
     }
 
     data = {
-        "model": "openrouter/hunter-alpha",
+        "model": "mistralai/mistral-7b-instruct:free",
         "messages": [
             {
                 "role": "system",
@@ -41,8 +41,14 @@ Rules:
     }
 
     response = requests.post(url, headers=headers, json=data)
+    response_json = response.json()
 
-    return response.json()["choices"][0]["message"]["content"]
+    # Safety check: Catch errors instead of crashing
+    if "choices" in response_json:
+        return response_json["choices"][0]["message"]["content"]
+    else:
+        print(f"OPENROUTER ERROR: {response_json}")
+        return "Oops! My brain stopped working for a second. Check the logs!"
 
 
 async def reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
