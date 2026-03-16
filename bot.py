@@ -2,8 +2,10 @@ import requests
 from telegram import Update
 from telegram.ext import ApplicationBuilder, MessageHandler, ContextTypes, filters
 
-TELEGRAM_TOKEN = "YOUR_TELEGRAM_TOKEN"
-OPENROUTER_API_KEY = "YOUR_OPENROUTER_API_KEY"
+import os
+
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 
 def ask_ai(message):
 
@@ -11,9 +13,7 @@ def ask_ai(message):
 
     headers = {
         "Authorization": f"Bearer {OPENROUTER_API_KEY}",
-        "Content-Type": "application/json",
-        "HTTP-Referer": "https://chimpu.bot",
-        "X-Title": "Chimpu Telegram Bot"
+        "Content-Type": "application/json"
     }
 
     data = {
@@ -40,33 +40,12 @@ Rules:
         ]
     }
 
-    try:
-        response = requests.post(url, headers=headers, json=data, timeout=30)
+    response = requests.post(url, headers=headers, json=data)
 
-        result = response.json()
-
-        # Print full response to Railway logs for debugging
-        print("OpenRouter Response:", result)
-
-        if "choices" in result:
-            return result["choices"][0]["message"]["content"]
-
-        # If OpenRouter returns an error
-        if "error" in result:
-            print("OpenRouter Error:", result["error"])
-            return "Chimpu's joke engine broke for a second 🤖"
-
-        return "Chimpu is thinking too hard 🤔"
-
-    except Exception as e:
-        print("Request failed:", str(e))
-        return "Chimpu tripped over a banana peel 🍌"
+    return response.json()["choices"][0]["message"]["content"]
 
 
 async def reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
-
-    if update.message is None or update.message.text is None:
-        return
 
     user_message = update.message.text
 
