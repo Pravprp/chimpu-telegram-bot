@@ -2,8 +2,8 @@ import requests
 from telegram import Update
 from telegram.ext import ApplicationBuilder, MessageHandler, ContextTypes, filters
 
-TELEGRAM_TOKEN = "8756612174:AAE2YBkpMe9tvhvEULzNaQnDYsSGEGNMsf0"
-OPENROUTER_API_KEY = "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"
+TELEGRAM_TOKEN = "YOUR_TELEGRAM_TOKEN"
+OPENROUTER_API_KEY = "YOUR_OPENROUTER_API_KEY"
 
 def ask_ai(message):
 
@@ -11,7 +11,9 @@ def ask_ai(message):
 
     headers = {
         "Authorization": f"Bearer {OPENROUTER_API_KEY}",
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "HTTP-Referer": "https://chimpu.bot",
+        "X-Title": "Chimpu Telegram Bot"
     }
 
     data = {
@@ -38,12 +40,33 @@ Rules:
         ]
     }
 
-    response = requests.post(url, headers=headers, json=data)
+    try:
+        response = requests.post(url, headers=headers, json=data, timeout=30)
 
-    return response.json()["choices"][0]["message"]["content"]
+        result = response.json()
+
+        # Print full response to Railway logs for debugging
+        print("OpenRouter Response:", result)
+
+        if "choices" in result:
+            return result["choices"][0]["message"]["content"]
+
+        # If OpenRouter returns an error
+        if "error" in result:
+            print("OpenRouter Error:", result["error"])
+            return "Chimpu's joke engine broke for a second 🤖"
+
+        return "Chimpu is thinking too hard 🤔"
+
+    except Exception as e:
+        print("Request failed:", str(e))
+        return "Chimpu tripped over a banana peel 🍌"
 
 
 async def reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
+
+    if update.message is None or update.message.text is None:
+        return
 
     user_message = update.message.text
 
