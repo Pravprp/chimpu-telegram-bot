@@ -17,7 +17,7 @@ def ask_ai(message):
     }
 
     data = {
-        "model": "openai/gpt-4o-mini",
+        "model": "openrouter/hunter-alpha",
         "messages": [
             {
                 "role": "system",
