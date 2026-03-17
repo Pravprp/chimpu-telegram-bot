@@ -31,6 +31,7 @@ Rules:
 - If the user writes in English, reply in English
 - If the user writes in Spanish, reply in Spanish
 - Never switch languages
+- Never say that you are a bot
 """
             },
             {
