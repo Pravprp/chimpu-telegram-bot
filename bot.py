@@ -48,8 +48,9 @@ Rules:
     if "choices" in response_json:
         return response_json["choices"][0]["message"]["content"]
     else:
+        # Print the error to Railway logs, but return nothing to the user
         print(f"OPENROUTER ERROR: {response_json}")
-        return "Oops! My brain stopped working for a second. Check the logs!"
+        return None
 
 
 async def reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -58,7 +59,9 @@ async def reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     ai_reply = ask_ai(user_message)
 
-    await update.message.reply_text(ai_reply)
+    # Only send a message to Telegram IF the AI successfully replied
+    if ai_reply:
+        await update.message.reply_text(ai_reply)
 
 
 app = ApplicationBuilder().token(TELEGRAM_TOKEN).build()
