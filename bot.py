@@ -7,6 +7,15 @@ import os
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 
+# A list of 5 reliable, free AI models to cycle through
+MODELS = [
+    "openrouter/hunter-alpha",
+    "openrouter/healer-alpha",
+    "google/gemma-3-12b-it:free",
+    "meta-llama/llama-3.3-70b-instruct:free",
+    "z-ai/glm-4.5-air:free"
+]
+
 def ask_ai(message):
 
     url = "https://openrouter.ai/api/v1/chat/completions"
@@ -16,12 +25,14 @@ def ask_ai(message):
         "Content-Type": "application/json"
     }
 
-    data = {
-        "model": "openrouter/hunter-alpha",
-        "messages": [
-            {
-                "role": "system",
-                "content": """
+    # Loop through our list of models one by one
+    for model_name in MODELS:
+        data = {
+            "model": model_name,
+            "messages": [
+                {
+                    "role": "system",
+                    "content": """
 You are Chimpu, a funny Telegram group bot.
 
 Rules:
@@ -33,24 +44,32 @@ Rules:
 - Never switch languages
 - Never say that you are a bot
 """
-            },
-            {
-                "role": "user",
-                "content": message
-            }
-        ]
-    }
+                },
+                {
+                    "role": "user",
+                    "content": message
+                }
+            ]
+        }
 
-    response = requests.post(url, headers=headers, json=data)
-    response_json = response.json()
+        try:
+            response = requests.post(url, headers=headers, json=data)
+            response_json = response.json()
 
-    # Safety check: Catch errors instead of crashing
-    if "choices" in response_json:
-        return response_json["choices"][0]["message"]["content"]
-    else:
-        # Print the error to Railway logs, but return nothing to the user
-        print(f"OPENROUTER ERROR: {response_json}")
-        return None
+            # If the response is good, return the text immediately
+            if response.status_code == 200 and "choices" in response_json:
+                return response_json["choices"][0]["message"]["content"]
+            else:
+                # If this specific model fails, print the error but let the loop try the next one
+                print(f"Skipping {model_name} due to error: {response_json}")
+                
+        except Exception as e:
+            # Catch internet connection issues so the bot doesn't crash
+            print(f"Connection error with {model_name}: {e}")
+
+    # If the loop finishes and all 5 models failed
+    print("CRITICAL: All 5 fallback models failed!")
+    return None
 
 
 async def reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
