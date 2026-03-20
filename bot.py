@@ -9,11 +9,11 @@ OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 
 # A list of 5 reliable, free AI models to cycle through
 MODELS = [
-    "openrouter/hunter-alpha",
-    "openrouter/healer-alpha",
-    "google/gemma-3-12b-it:free",
-    "meta-llama/llama-3.3-70b-instruct:free",
-    "z-ai/glm-4.5-air:free"
+    "qwen/qwen3-coder:free",
+    "qwen/qwen3-next-80b-a3b-instruct:free",
+    "nvidia/nemotron-3-nano-30b-a3b:free",
+    "stepfun/step-3.5-flash:free",
+    "nvidia/nemotron-3-super-120b-a12b:free"
 ]
 
 def ask_ai(message):
