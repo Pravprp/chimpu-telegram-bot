@@ -1,5 +1,6 @@
 import os
-import random  # Added for random selections
+import random
+import time  # Added to track the 5-minute timer
 from telegram import Update
 from telegram.ext import ApplicationBuilder, MessageHandler, ContextTypes, filters
 from groq import Groq
@@ -14,6 +15,11 @@ GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
 # Initialize Groq client
 client = Groq(api_key=GROQ_API_KEY)
+
+# Dictionary to track when Chimpu was last activated in each chat
+# Format: {chat_id: timestamp_of_last_chimpu_mention}
+active_chats = {}
+ACTIVE_WINDOW_SECONDS = 5 * 60  # 5 minutes in seconds
 
 # Chimpu personality
 system_instruction = """
@@ -54,8 +60,32 @@ def ask_ai(message):
 
 
 async def reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    # Safety check: ensure there is text in the message
+    if not update.message or not update.message.text:
+        return
+
     user_message = update.message.text
     user_message_lower = user_message.lower()
+    chat_id = update.message.chat_id
+    current_time = time.time()
+
+    # 1. Check if the user is waking Chimpu up
+    is_chimpu_called = "chimpu" in user_message_lower
+
+    # 2. Check if Chimpu is currently awake in this specific chat
+    last_active_time = active_chats.get(chat_id, 0)
+    is_awake = (current_time - last_active_time) <= ACTIVE_WINDOW_SECONDS
+
+    # 3. If Chimpu is called, wake him up and reset his 5-minute timer
+    if is_chimpu_called:
+        active_chats[chat_id] = current_time
+        is_awake = True
+
+    # 4. If he is asleep and wasn't just called, ignore the message entirely
+    if not is_awake:
+        return
+
+    # --- If the code reaches here, Chimpu is AWAKE and ready to reply ---
 
     # Keyword check logic
     if "joke" in user_message_lower:
