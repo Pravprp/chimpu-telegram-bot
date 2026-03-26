@@ -1,7 +1,12 @@
 import os
+import random  # Added for random selections
 from telegram import Update
 from telegram.ext import ApplicationBuilder, MessageHandler, ContextTypes, filters
 from groq import Groq
+
+# Import our new lists
+from jokes import BANANA_JOKES
+from poems import BANANA_POEMS, BANANA_QUOTES
 
 # Get tokens from environment
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
@@ -41,7 +46,7 @@ def ask_ai(message):
                 {"role": "system", "content": system_instruction},
                 {"role": "user", "content": message}
             ],
-            model="openai/gpt-oss-120b",  # Fast + powerful model
+            model="openai/gpt-oss-120b",  
         )
         return chat_completion.choices[0].message.content
 
@@ -52,16 +57,32 @@ def ask_ai(message):
 
 async def reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_message = update.message.text
+    user_message_lower = user_message.lower()
 
-    ai_reply = ask_ai(user_message)
+    # Keyword check logic
+    if "joke" in user_message_lower:
+        # User asked for a joke, pick one and skip AI
+        ai_reply = random.choice(BANANA_JOKES)
+        
+    elif "poem" in user_message_lower:
+        # User asked for a poem, pick one and skip AI
+        ai_reply = random.choice(BANANA_POEMS)
+        
+    elif "quote" in user_message_lower:
+        # User asked for a quote, pick one and skip AI
+        ai_reply = random.choice(BANANA_QUOTES)
+        
+    else:
+        # No keywords found, let Groq AI handle it
+        ai_reply = ask_ai(user_message)
 
+    # Send the final single message
     if ai_reply:
         await update.message.reply_text(ai_reply)
 
 
 if __name__ == '__main__':
     app = ApplicationBuilder().token(TELEGRAM_TOKEN).build()
-
     app.add_handler(MessageHandler(filters.TEXT & (~filters.COMMAND), reply))
 
     print("Chimpu is online with Groq 😄")
