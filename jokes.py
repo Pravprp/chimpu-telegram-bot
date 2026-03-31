@@ -330,7 +330,7 @@ BANANA_JOKES = [
     "Husband: Kela laaya hoon.\nWife: Good.\nHusband: Ab hum dono kela family! 🍌❤️😂",
     "Dost: Yaar kela kha le energy ke liye.\nTu: Haan lekin tu bhi kha, warna main akela! 🍌😂",
     "GF: Baby kela khaoge?\nBF: Haan tumhare saath.\nGF: Phir hum slip nahi karenge kabhi! 🍌❤️😎"
-    "Teacher: Batao, 'kela' aur 'akela' mein kya farq hai?\nStudent: Sir, kela chhil ke khate hain, aur akela ro ke! 🍌😂",
+    "Teacher: Batao, 'kela' aur 'akela' mein kya farq hai?\nStudent: Sir, kela chhil ho ke khate hain, aur akela ro ke! 🍌😂",
     "Doctor: Roz ek kela khao, bimari door rahegi.\nPatient: Par doctor sahab, bandar toh roz kela khata hai, fir bhi ped par nanga kyu ghumta hai? 🐒🤣",
     "Santa: Maine aaj ek aisi machine banayi hai jisme kela dalo toh apple nikalta hai!\nBanta: Arre waah! Kahan hai wo machine?\nSanta: Mere pet mein! 🍌🍎😂",
     "Wife: Suno, main mayke ja rahi hu, tum akele reh loge?\nHusband: Arre darling, main 'kela' kha lunga, par 'akela' bahot khush rahunga! 😎🍌🤣",
