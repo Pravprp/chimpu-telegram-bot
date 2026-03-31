@@ -346,6 +346,16 @@ BANANA_POEMS = [
 "Kela bada hai, gilaas lamba laana, 😄\nDoodh ke sath iska meetha shake banana. ✨\nKuch cheezein mil kar nayi shakti deti hain,\nSahi dosti se naya itihaas likhana. 🍌",
 "Lalchi ki nazar iske guchhe par hoti hai, 😉\nPar sacha insaan ek mein hi shanti soti hai. 🌱\nLalach buri bala hai, isko samajh lo,\nSantosh mein hi asal samriddhi hoti hai. ✨",
 "Sab kahenge ki kela sirf pait bharta hai, 😄\nPar asal mein ye man mein utsaah barta hai. 🍌\nZindagi ki chhoti baaton ko samjho,\nChhota sa pal bhi khushi bayan karta hai. 🌱"
+"Bhookh satati hai magar ghabrane ka nahi, 😉\nFast food ke thele pe jaane ka nahi. 🚫\nHealth banani hai toh yaad rakh mere chela,\nDuniya idhar ki udhar ho, chhodne ka nahi kela! 🍌💪",
+    "Mushkilein darati hain magar darne ka nahi, ✨\nSafar mein rone ya aah bharne ka nahi. 🚶‍♂️\nBeshak is bheed mein tu chal raha akela,\nPar himmat ki chaal mein rukne ka nahi chela,\nEnergy chahiye toh kha lena ek kela! 🍌🔥",
+    "Sasti cheezein lubhati hain magar lene ka nahi, 🛍️\nApni mehnat ka paisa aise dene ka nahi. 💸\nMarket mein chal raha hai dhokhe ka khela,\nPar apne asoolon ko bhoolne ka nahi chela,\nMast reh, swasth reh aur roz kha kela! 🍌😉",
+    "Junk food ki khushboo bulati hai magar khane ka nahi, 🍕\nBimariyon ke jaal mein phas jaane ka nahi. 🕸️\nDekh kar chaat-pakode ka wo rangeen thela,\nApne fit rahene ke sapne ko todne ka nahi,\nDiet pe rehna hai toh pakad le tu kela! 🍌🏃‍♂️",
+    "Gussa aata hai magar aapa khone ka nahi, 😡\nBewajah ke vivadon mein rone ka nahi. 🛑\nZindagi mein waise hi hai bahut jhamela,\nShanti se baith aur kha le ek meetha kela. 🍌🧘‍♂️",
+    "Dost kehte hain aaja magar bhatakne ka nahi, 🍻\nGalat raste ki aur kadam rakhne ka nahi. 🚦\nGuruji ne sikhaya hai ban kar sacha chela,\nBure kamo ki bheed mein jane ka nahi akela,\nSahi raah par chal aur sehat ke liye kha kela! 🍌✨",
+    "Peeche se log khinchenge magar rukne ka nahi, 🧗‍♂️\nZindagi ki dhoop mein aise sukhne ka nahi. ☀️\nHaalat ne tujhko mushkilon mein hai dhakela,\nPar apne iradon ko jhukne dene ka nahi,\nTaqat bator, aage badh, aur daba ke kha kela! 🍌💪",
+    "Neend aati hai magar abhi sone ka nahi, 😴\nKamyabi ke khwab ko aise khone ka nahi. 🏆\nChahe din bhar kaam karke tu ho jaye thakela,\nLekin sapnon ki race mein piche rehne ka nahi,\nInstant energy chahiye? Toh turant kha kela! 🍌🚀",
+    "Kismat aazmati hai magar rone ka nahi, 🎲\nJeb mein na ho dhela toh niraash hone ka nahi. 💰\nMehnat karega toh badlega yeh mela,\nHaar kar maidan kabhi chhodne ka nahi,\nZameen par baith aur shukar se kha kela! 🍌🙏",
+    "Trend bulata hai magar andha hone ka nahi, 📱\nDusron ki nakal karke khud ko khone ka nahi. 🎭\nDuniya jaa rahi hai jahan, jaane de wo rela,\nApni alag pehchan ko mitne dene ka nahi,\nMast apni dhun mein reh aur roz kha kela! 🍌😎"
 ]
 
 BANANA_QUOTES = [
