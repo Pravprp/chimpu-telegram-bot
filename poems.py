@@ -356,6 +356,36 @@ BANANA_POEMS = [
     "Neend aati hai magar abhi sone ka nahi, 😴\nKamyabi ke khwab ko aise khone ka nahi. 🏆\nChahe din bhar kaam karke tu ho jaye thakela,\nLekin sapnon ki race mein piche rehne ka nahi,\nInstant energy chahiye? Toh turant kha kela! 🍌🚀",
     "Kismat aazmati hai magar rone ka nahi, 🎲\nJeb mein na ho dhela toh niraash hone ka nahi. 💰\nMehnat karega toh badlega yeh mela,\nHaar kar maidan kabhi chhodne ka nahi,\nZameen par baith aur shukar se kha kela! 🍌🙏",
     "Trend bulata hai magar andha hone ka nahi, 📱\nDusron ki nakal karke khud ko khone ka nahi. 🎭\nDuniya jaa rahi hai jahan, jaane de wo rela,\nApni alag pehchan ko mitne dene ka nahi,\nMast apni dhun mein reh aur roz kha kela! 🍌😎"
+"Raat ke andhere mein jab akele hoti hai bhookh, 😉\nHaath mein aate hi milta hai dil ko bada sukh. 🍌\nChhilka utar kar iski mithaas ko tu chakh le,\nMehnat ke is phal se apni zindagi nikharkar rakh le. ✨",
+"Lamba aur thos, dekh kar sab hairan hain, 😄\nIske andar chhupe swaad se kitne anjaan hain. 🍌\nBahar se toh is duniya mein dhoke bade hain,\nPar iski sachi mithaas ke sab qadardaan hain. 🌱",
+"Zorse dabaoge toh iska roop bigad jayega, 😉\nHath se fisal kar yeh neeche gir jayega. 🍌\nNaram dilon ke saath hamesha naram hi rehna,\nSakhti dikhane se sacha rishta toot jayega. ✨",
+"Poora ek baar mein khane ki koshish mat karna, 😄\nGale mein atak jaye toh padega aahein bharna. 🍌\nZindagi ki har seedhi ko dheere dheere chadhna,\nJaldbazi mein aksar padta hai mushkilon se ladna. 🌱",
+"Ped par jab yeh ulta latakta hai shaan se, 😉\nPakne ka iska waqt aata hai bade itminaan se. 🍌\nChahe halaat tujhe kitna bhi neeche jhuka de,\nApna wajood banaye rakhna pure swabhimaan se. ✨",
+"Akele akele khane mein utna maza kahan, 😄\nBaant kar khaoge toh khush hoga yeh jahan. 🍌\nApni khushiyan sabke sath baatna seekh lo,\nBhaichaare se hi roshan hota hai yeh aasmaan. 🌱",
+"Subah subah isko uthate hi josh aa jata hai, 😉\nIski urja se saara aalas bhag jata hai. 🍌\nDin ki shuruat hamesha achhi soch se karna,\nSahi disha mein kiya gaya kaam phal lata hai. ✨",
+"Kapde utarte hi iska naya rang dikhta hai, 😄\nShuddh aur safed roop kitna pyara lagta hai. 🍌\nJhooth ka nakab hata kar sachai se milo,\nSach bolne wala insaan hi hamesha tikta hai. 🌱",
+"Doodh ke sath jab yeh achhe se ghul jata hai, 😉\nGaadha aur meetha hoke sabki pyas bujhata hai. 🍌\nAlag alag logo ke sath milkar chalna seekho,\nEkta ka swaad hi jeevan ko safal banata hai. ✨",
+"Jab thoda purana ho jaye, tab asar dikhata hai, 😄\nKala padne par bhi meetha swaad de jata hai. 🍌\nUmar badhne par log beshak naram ho jayein,\nPar unka gyaan hamesha naya rasta sikhata hai. 🌱"
+    "Chhilka utaaro toh mithaas paoge,\nGehraai mein jaoge toh kho jaoge.\nSeedha khada hai, naram hai mizaaj,\nKela hi toh hai zindagi ka saaz. 🍌✨",
+    "Dhoop mein paka hai, laali hai chhaai,\nIske aage sab feeke hain bhai.\nPakad lo zor se, nikalta ras,\nKela hai shakti, kela hai kas. 😉🍌",
+    "Na jhad hai, na patta, bas hai akar,\nIske dum pe machi hai duniya mein hulchul.\nJhukao toh sabar, uthao toh josh,\nKela hai cheez, udd jaate hain hosh. 😄🍌",
+    "Gulabi dhoop mein ye nikharta hai,\nHar koi ise hi toh chaahta hai.\nNaadaani mein chhuye toh milta sukoon,\nKela hai jannat, kela hai junoon. 🍌🔥",
+    "Chhota ho ya bada, swaad wahi hai,\nIske bina jeewan khali-khali hai.\nAndar ki garmi, baahar se thanda,\nKela hai yaar, sabse nirala fanda. 😉✨",
+    "Tod lo thali se, ya khaalo wahin,\nIske jaisa tasty kahin nahi.\nSeedha seedha hai, par tedha kaam,\nKela hai mantra, kela hai inaam. 🍌💥",
+    "Rango ka raja, swaad mein tez,\nIske aage sab lagte hain baaz.\nChus lo saara, ya khao chaba kar,\nKela hai jeevan, jata hai pighal kar. 🍌🔥",
+    "Peele rang mein hai alag hi nasha,\nHar koi ispe hai marta bacha.\nGeela-geela sa, naram-naram sa,\nKela hai jadoo, kamaal ka dum sa. 😉🌟",
+    "Chhilke ke neeche hai asal khazana,\nIske bina adhura hai har fasaana.\nApni heet pe hai, kadak hai mizaaj,\nKela hai shahi, kela hai raaj. 🍌😎",
+    "Khaali ho pet, ya mann ho udaas,\nKela hi dega tumhein sacchi pyaas.\nChhilte hi raunak, khate hi josh,\nKela hai toh hai, duniya behosh. 🍌💖"
+"Bahar se thoda sakht hai, par andar se hai naram 🍌\nWaqt do isko thoda, dikhayega apna dharam 😉\nDheere dheere chilka utaro, toh dekho iska nazaara ✨\nYeh tedha saadha kela banega sabka sahara 😄\nSabr ka phal meetha hota hai, yeh isne hi sikhaya 🌱\nAndar ki asli mithaas ko pyaar se bahar laya ✨",    
+    "Seedha nahi hai thoda tedha hai, par ismein hai badi jaan 💪\nDekhne mein bhale aam lage, par energy ki hai yeh shaan 🍌\nShape pe mat jaana doston, asar iska gehra hota hai 😉\nJo iska swaad chakh le, phir chain se kahan sota hai ✨",    
+    "Upar aane lage hain daag, par andar se hai aur sweet 🍌\nKacche mein thi thodi akkad, ab pakke hue hai complete 😉\nUmra ke saath iski taqat aur badh jaati hai ✨\nKele ki asli pehchaan toh raat ko samajh aati hai 🌱",    
+    "Thak gaye ho safar mein toh isko apne paas rakhna 🍌\nMeethi si bhookh mitaane ko iska thoda ras chakhna 😉\nRaat ho ya din, yeh hamesha lamba saath nibhayega 🌙\nTere andar ki saari weakness ek pal mein bhagayega ✨",    
+    "Bada aasan lagta hai isko haath mein pakadna 🍌\nPar aate hi form mein dikhata hai apni akadna 😉\nKholne ka tareeka zara naram hi dikhana 😅\nBina soche samjhe isko zor se na dabana ✨\nChilke pe iske bhool se bhi mat phisalna 🌱\nMazaa lena hai poora, toh pyaar se masalna 😄",    
+    "Guchhe mein latakta hai, par apni hai pehchaan 🍌\nJab pak ke taiyaar ho jaaye, toh khil uthegi jaan 😉\nJaldi mat todna isko, thoda sabr toh dikhao 🌱\nSahi waqt aane par hi, iska poora anand uthao ✨",    
+    "Apne jism ko isne mote chilke mein chupaya hai 🍌\nHar aam insaan ko isne chupke se lalachaya hai 😉\nZor se dabaoge toh yeh andar se rooth jayega 💔\nPyaar se khologe toh mithaas apni lutayega ✨",    
+    "Subah subah ki shuruvaat iske bina adhoori hai 🍌\nBody ko fit rakhne ki yeh ek meethi majboori hai 😉\nDoodh ke saath mil jaye, toh asar double ho jata hai 🥛\nKele ka jaadoo hi kuch aisa, raaton ki neend udata hai ✨",    
+    "Na zyada dabao isko, warna ras nikal jayega 🍌\nHalke haath se pakdo, toh lamba chal payega 😉\nShake banao ya aise khao, dono mein hai baat ✨\nKela hi toh sathi hai tumhara, guzarni ho agar raat 🌙",    
+    "Mehnga nahi hai bilkul, par anmol iska kaam hai 🍌\nBade bade mevo ke aage, iska bhi lamba naam hai 😉\nChupchap rehta pocket mein, waqt pe bahar aata hai ✨\nJab bhookh sataye zoron ki, toh kela hi bachata hai 😄"
 ]
 
 BANANA_QUOTES = [
