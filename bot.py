@@ -82,6 +82,13 @@ async def reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
     last_active_time = active_chats.get(chat_id, 0)
     is_awake = (current_time - last_active_time) <= ACTIVE_WINDOW_SECONDS
 
+    # --- NEW FEATURE: STOP LOGIC ---
+    # If the user says 'stop' and Chimpu is currently awake, put him to sleep
+    if "stop" in user_message_lower and is_awake:
+        active_chats[chat_id] = 0  # Reset the timer back to 0
+        await update.message.reply_text("Thik hai bhai, main chup ho raha hu! 🙊😴 (Going to sleep!)")
+        return  # Stop processing this message further
+
     # 3. If Chimpu is called, wake him up and reset his 5-minute timer
     if is_chimpu_called:
         active_chats[chat_id] = current_time
