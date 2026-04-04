@@ -145,7 +145,7 @@ BANANA_POEMS = [
     "Kuch logo ka dhyan bas iske size par ruka hai,\nPar asal maza toh iske swaad ke roop me jhuka hai.\nInsaan ko uske kapdo ya rutbe se tu mat parakh,\nSachi insaniyat uske dil ke kisi kone me aakar ruka hai. ❤️🍌",
     "Peela aur hara, dono roop hain iske chamakte,\nKacche log rote, par pake hue hain mehakte.\nZindagi tu apne andaz se apni marzi ki jee,\nDekhna ek din tere taare bhi falak pe dhamakte. 🌟🍌",
     "Jisne guchhe se alag hoke chilka apna faad liya,\nSamajh lo usne apni izzat ka ghar ujad diya.\nKhole hue kele ko thodi der khula mat chhod,\nSamay ki dhoop ne na jane kitno ko mar diya. 🥀🍌",
-    "Kela pakadne me thoda naram thoda sakht sa,\nKha lo toh swaad lagta bilkul hi alag sa.\nZindagi bhi yahi kela hai mere pyaare dost,\nJiyo toh lage jaise har din naya janat sa! 🍌✨💖"
+    "Kela pakadne me thoda naram thoda sakht sa,\nKha lo toh swaad lagta bilkul hi alag sa.\nZindagi bhi yahi kela hai mere pyaare dost,\nJiyo toh lage jaise har din naya janat sa! 🍌✨💖",
     "Dekh mera aakar, log sochte hain tedha hoon 🍌\nPar sach toh yeh hai, main apni dhun mein akela hoon 😉\nChhilka utaar kar dekh, andar se kitna naram hoon ✨\nBahar se sakht dikhu, par meethapan ka dharam hoon 🌱",
 "Khada hoon dhoop mein, rang mera badalta hai 🍌\nJo mujhe kachcha samjhe, wahi baad mein pighalta hai 😉\nWaqt aane par main khud ko poora khol deta hoon ✨\nMeethas bhari baaton se, sabka dil jeet leta hoon 🌱",
 "Duniya kehti hai lamba aur patla hai mera roop 🍌\nPar main chupa ke rakhta hoon, apne andar dhoop 😉\nJab koi kareeb aaye, tabhi chhilka girata hoon ✨\nApne asali swaad se, sabko deewana banata hoon 🌱",
