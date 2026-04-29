@@ -1,6 +1,8 @@
 import os
 import random
-import time  # Added to track the 5-minute timer
+import time
+import threading
+from flask import Flask
 from telegram import Update
 from telegram.ext import ApplicationBuilder, MessageHandler, ContextTypes, filters
 from groq import Groq
@@ -17,9 +19,20 @@ GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 client = Groq(api_key=GROQ_API_KEY)
 
 # Dictionary to track when Chimpu was last activated in each chat
-# Format: {chat_id: timestamp_of_last_chimpu_mention}
 active_chats = {}
 ACTIVE_WINDOW_SECONDS = 5 * 60  # 5 minutes in seconds
+
+# --- NEW CODE FOR RENDER: Dummy Web Server ---
+app_web = Flask(__name__)
+
+@app_web.route('/')
+def health_check():
+    return "Chimpu is awake and monkeying around!"
+
+def run_web_server():
+    port = int(os.environ.get("PORT", 8000))
+    app_web.run(host="0.0.0.0", port=port)
+# ---------------------------------------------
 
 # Chimpu personality
 system_instruction = """
@@ -64,7 +77,6 @@ def ask_ai(message):
         print(f"Groq Error: {e}")
         return None
 
-
 async def reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # Safety check: ensure there is text in the message
     if not update.message or not update.message.text:
@@ -82,12 +94,11 @@ async def reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
     last_active_time = active_chats.get(chat_id, 0)
     is_awake = (current_time - last_active_time) <= ACTIVE_WINDOW_SECONDS
 
-    # --- NEW FEATURE: STOP LOGIC ---
-    # If the user says 'stop' and Chimpu is currently awake, put him to sleep
+    # --- STOP LOGIC ---
     if "stop" in user_message_lower and is_awake:
-        active_chats[chat_id] = 0  # Reset the timer back to 0
+        active_chats[chat_id] = 0  
         await update.message.reply_text("Thik hai bhai, main chup ho raha hu! 🙊😴 (Going to sleep!)")
-        return  # Stop processing this message further
+        return  
 
     # 3. If Chimpu is called, wake him up and reset his 5-minute timer
     if is_chimpu_called:
@@ -98,31 +109,29 @@ async def reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not is_awake:
         return
 
-    # --- If the code reaches here, Chimpu is AWAKE and ready to reply ---
-
-    # Keyword check logic
+    # --- Keyword check logic ---
     if "joke" in user_message_lower:
-        # User asked for a joke, pick one and skip AI
         ai_reply = random.choice(BANANA_JOKES)
         
     elif "poem" in user_message_lower:
-        # User asked for a poem, pick one and skip AI
         ai_reply = random.choice(BANANA_POEMS)
         
     elif "quote" in user_message_lower:
-        # User asked for a quote, pick one and skip AI
         ai_reply = random.choice(BANANA_QUOTES)
         
     else:
-        # No keywords found, let Groq AI handle it
         ai_reply = ask_ai(user_message)
 
-    # Send the final single message
     if ai_reply:
         await update.message.reply_text(ai_reply)
 
-
 if __name__ == '__main__':
+    # Start the Flask server in a separate daemon thread
+    web_thread = threading.Thread(target=run_web_server)
+    web_thread.daemon = True
+    web_thread.start()
+
+    # Start the Telegram bot polling
     app = ApplicationBuilder().token(TELEGRAM_TOKEN).build()
     app.add_handler(MessageHandler(filters.TEXT & (~filters.COMMAND), reply))
 
